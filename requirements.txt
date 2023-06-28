@@ -30,3 +30,5 @@ urllib3==1.26.16
 psycopg2-binary
 dj-database-url
 gunicorn
+whitenoise
+Brotli
