@@ -8,7 +8,7 @@ import os
 CAL_ID = config("CAL_ID") #loading id from env file
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
 SERVICE_ACCOUNT_FILE = os.getenv('GOOGLE_APPLICATION_CREDENTIALS', './google-credentials.json')
-
+private_key = os.getenv('PRIVATE_KEY')
 
 def test_calendar(request):
     print("RUNNING TEST_CALENDAR()")
@@ -16,6 +16,7 @@ def test_calendar(request):
     credentials = service_account.Credentials.from_service_account_file(
         SERVICE_ACCOUNT_FILE, scopes=SCOPES
     )
+    credentials['private_key'] = private_key
     service = googleapiclient.discovery.build("calendar", "v3", credentials=credentials)
 
     # CREATING A NEW EVENT
