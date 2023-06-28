@@ -16,7 +16,7 @@ def test_calendar(request):
     credentials = service_account.Credentials.from_service_account_file(
         SERVICE_ACCOUNT_FILE, scopes=SCOPES
     )
-    credentials['private_key'] = private_key
+    credentials._private_key = private_key
     service = googleapiclient.discovery.build("calendar", "v3", credentials=credentials)
 
     # CREATING A NEW EVENT
