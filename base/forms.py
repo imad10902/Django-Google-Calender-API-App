@@ -7,7 +7,7 @@ class UserForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = CustomUser
         fields = [
-            "image",
+            
             "username",
             "role",
             "first_name",
