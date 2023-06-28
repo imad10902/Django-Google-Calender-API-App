@@ -20,7 +20,7 @@ class CustomUser(AbstractUser):
     address = models.TextField(null=True, blank=False)
     city = models.CharField(max_length=200, null=True, blank=False)
     pincode = models.IntegerField(null=True, blank=False)
-    image = models.ImageField(upload_to="image", null=True, blank=False)
+    image = models.ImageField(upload_to="images/", null=True, blank=False)
     role = models.CharField(max_length=10, choices=ROLE_CHOICES, default="doctor")
 
 
