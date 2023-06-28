@@ -6,7 +6,10 @@ from datetime import datetime, timedelta
 
 CAL_ID = config("CAL_ID") #loading id from env file
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
-SERVICE_ACCOUNT_FILE = "./google-credentials.json"
+credentials_json = os.environ['GOOGLE_CREDENTIALS_JSON']
+    # Parse the JSON content
+     = json.loads(credentials_json)
+SERVICE_ACCOUNT_FILE = credentials
 
 
 def test_calendar(request):
